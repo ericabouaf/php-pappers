@@ -1,6 +1,6 @@
 language: php
 
-dist: trusty
+dist: xenial
 
 cache:
   directories:
@@ -9,10 +9,6 @@ cache:
 
 matrix:
   include:
-    - php: 7.2
-      env: composer_extra="--prefer-lowest --prefer-stable"
-    - php: 7.3
-      env: composer_extra="--prefer-lowest --prefer-stable"
     - php: 7.4
       env: composer_extra="--prefer-lowest --prefer-stable"
     - name: Highest stable version dependencies
