@@ -16,8 +16,8 @@ matrix:
     - php: 7.4
       env: composer_extra="--prefer-lowest --prefer-stable"
     - name: Highest stable version dependencies
-        php: 8.0
-        env: composer_extra="--prefer-stable"
+      php: 8.0
+      env: composer_extra="--prefer-stable"
   fast_finish: true
 
 install:
