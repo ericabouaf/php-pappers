@@ -4,12 +4,8 @@
     "keywords": ["pappers"],
     "type": "library",
     "homepage": "https://github.com/ericabouaf/php-pappers",
-    "config": {
-        "platform": {
-            "php": ">=7.4"
-        }
-    },
     "require": {
+        "php": ">=7.4",
         "symfony/http-client": "^4.3||^5.0",
         "symfony/serializer": "^4.3||^5.0",
         "symfony/property-info": "^4.3",
