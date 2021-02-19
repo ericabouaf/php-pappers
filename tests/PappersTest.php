@@ -19,7 +19,7 @@ class PappersTest extends TestCase
 
     public function setUp(): void
     {
-        $apikey = "TODO";
+        $apikey = getenv('PAPPERS_API_KEY');
         $this->pappers = new Pappers($apikey);
     }
 
