@@ -4,6 +4,7 @@
 namespace Neyric\Pappers\Tests;
 
 
+use Neyric\Pappers\Exception\PappersNotFoundException;
 use Neyric\Pappers\Model\Recherche\Recherche;
 use Neyric\Pappers\Pappers;
 use PHPUnit\Framework\TestCase;
@@ -23,9 +24,6 @@ class PappersTest extends TestCase
         $this->pappers = new Pappers($apikey);
     }
 
-    /**
-     * @covers \Neyric\Pappers\Pappers
-     */
     public function testShouldReturnCompanyFromSiren(): void
     {
         $entreprise = $this->pappers->getCompanyBySiren(self::GOOGLE_FRANCE_SIREN);
@@ -34,9 +32,6 @@ class PappersTest extends TestCase
         $this->assertEquals("GOOGLE FRANCE", $entreprise->nom_entreprise);
     }
 
-    /**
-     * @covers \Neyric\Pappers\Pappers
-     */
     public function testShouldReturnCompanyFromSiret(): void
     {
         $entreprise = $this->pappers->getCompanyBySiret(self::GOOGLE_FRANCE_SIRET);
@@ -45,9 +40,6 @@ class PappersTest extends TestCase
         $this->assertEquals("GOOGLE FRANCE", $entreprise->nom_entreprise);
     }
 
-    /**
-     * @covers \Neyric\Pappers\Pappers
-     */
     public function testShouldReturnCompanyFromSiren2(): void
     {
         $entreprise = $this->pappers->getCompanyBySiren(self::FUNBOOKER_SIREN);
@@ -56,9 +48,6 @@ class PappersTest extends TestCase
         $this->assertEquals("FUNBOOKER", $entreprise->nom_entreprise);
     }
 
-    /**
-     * @covers \Neyric\Pappers\Pappers
-     */
     public function testSearch(): void
     {
         $query = new Recherche();
@@ -72,15 +61,19 @@ class PappersTest extends TestCase
         $this->assertEquals(1, $resultats->page);
     }
 
-    /**
-     * @covers \Neyric\Pappers\Pappers
-     */
     public function testDownloadDocument(): void
     {
         $token = "QTgyOTYzNDc4MTIwMjAwMzAzNzZ8U3RhdHV0cyBtaXMgw6Agam91cnw";
         $doc = $this->pappers->telechargeDocument($token);
 
         $this->assertNotNull($doc);
+    }
+
+
+    public function testNotFoundException(): void
+    {
+        $this->expectException(PappersNotFoundException::class);
+        $this->pappers->getCompanyBySiren("123456789");
     }
 
 }
