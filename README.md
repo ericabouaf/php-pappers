@@ -1,4 +1,4 @@
-# PHP Pappers [![Build Status](https://travis-ci.com/ericabouaf/php-pappers.svg?branch=main)](https://travis-ci.com/github/ericabouaf/php-pappers) [![Latest Stable Version](https://poser.pugx.org/ericabouaf/php-pappers/v/stable)](https://packagist.org/packages/ericabouaf/php-pappers) [![Total Downloads](https://poser.pugx.org/ericabouaf/php-pappers/downloads)](https://packagist.org/packages/ericabouaf/php-pappers) [![License](https://poser.pugx.org/ericabouaf/php-pappers/license)](https://packagist.org/packages/ericabouaf/php-pappers)
+# PHP Pappers [![Build Status](https://travis-ci.com/ericabouaf/php-pappers.svg?branch=main)](https://travis-ci.com/github/ericabouaf/php-pappers) [![Latest Stable Version](https://poser.pugx.org/ericabouaf/pappers/v/stable)](https://packagist.org/packages/ericabouaf/pappers) [![Total Downloads](https://poser.pugx.org/ericabouaf/pappers/downloads)](https://packagist.org/packages/ericabouaf/pappers) [![License](https://poser.pugx.org/ericabouaf/pappers/license)](https://packagist.org/packages/ericabouaf/pappers)
 
 Module to access the [Pappers.fr](https://www.pappers.fr/) API
 
